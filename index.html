@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taekwondo Compiègne - Club de Taekwondo fondé en 1996</title>
+    <meta
+      name="description"
+      content="Club de Taekwondo à Compiègne depuis 1996. Cours pour enfants, ados et adultes. Découvrez nos entraînements au Gymnase Ferdinand Bac."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <!-- EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <style>
+      body {
+        font-family: "Satoshi", sans-serif;
+      }
+
+      /* Configuration Tailwind personnalisée */
+      .primary-red {
+        background-color: #ef4444;
+      }
+
+      .dark-text {
+        color: #1f2937;
+      }
+
+      /* Défilement fluide */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Offset pour le header fixe */
+      section[id] {
+        scroll-margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="shadow-md bg-white sticky top-0 z-40">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl"
+      >
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img
+            src="assets/img/logo.png"
+            alt="Logo Taekwondo Compiègne"
+            class="h-12"
+          />
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <button
+          id="menu-toggle"
+          class="md:hidden focus:outline-none"
+          aria-label="Ouvrir le menu"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Navigation for Desktop -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#club" class="hover:text-red-500 transition duration-300"
+            >Le club</a
+          >
+          <a href="#equipe" class="hover:text-red-500 transition duration-300"
+            >Notre équipe</a
+          >
+          <a href="#horaires" class="hover:text-red-500 transition duration-300"
+            >Cours & horaires</a
+          >
+          <a
+            href="#telechargement"
+            class="hover:text-red-500 transition duration-300"
+            >Inscriptions</a
+          >
+          <a
+            href="#contact"
+            class="text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition duration-300"
+            >Contactez-nous</a
+          >
+        </nav>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden fixed inset-0 bg-red-600 z-50 p-6"
+      >
+        <div class="flex justify-end mb-8">
+          <button
+            id="close-menu"
+            class="text-white focus:outline-none"
+            aria-label="Fermer le menu"
+          >
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-6">
+          <a
+            href="#club"
+            class="text-white text-2xl font-bold border-b border-white pb-4 hover:text-gray-200 transition duration-300"
+            >LE CLUB</a
+          >
+          <a
+            href="#equipe"
+            class="text-white text-2xl font-bold border-b border-white pb-4 hover:text-gray-200 transition duration-300"
+            >NOTRE ÉQUIPE</a
+          >
+          <a
+            href="#horaires"
+            class="text-white text-2xl font-bold border-b border-white pb-4 hover:text-gray-200 transition duration-300"
+            >COURS & HORAIRES</a
+          >
+          <a
+            href="#telechargement"
+            class="text-white text-2xl font-bold border-b border-white pb-4 hover:text-gray-200 transition duration-300"
+            >INSCRIPTIONS</a
+          >
+          <a
+            href="#contact"
+            class="mt-6 bg-white text-gray-900 hover:bg-red-500 hover:text-white px-6 py-3 rounded text-center font-bold transition duration-300"
+            >Contactez nous</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section Hero "Bouger, Apprendre, Se Dépasser" -->
+      <!-- Mobile Version of the Section -->
+      <section
+        id="hero-mobile"
+        class="lg:hidden flex items-center justify-center min-h-screen p-4 bg-gray-50"
+      >
+        <div
+          class="max-w-md w-full bg-white rounded-3xl shadow-xl overflow-hidden"
+        >
+          <!-- Image Section -->
+          <div class="relative w-full h-96 overflow-hidden rounded-t-3xl">
+            <img
+              src="assets/img/frame23.png"
+              alt="Femme pratiquant le taekwondo"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Content Section -->
+          <div class="p-8 text-gray-900">
+            <h1 class="text-3xl font-extrabold mb-4 leading-tight">
+              BOUGER, APPRENDRE,<br />SE DÉPASSER
+            </h1>
+            <p class="text-lg mb-8 text-gray-700">
+              Une activité complète pour le corps et l'esprit dans une super
+              ambiance.
+            </p>
+            <!-- Button -->
+            <a
+              href="#contact"
+              class="block w-full text-center bg-red-500 text-white py-4 px-6 rounded-xl font-bold text-lg hover:bg-red-600 transition duration-300"
+            >
+              Nous rejoindre dès maintenant
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Desktop Version of the Section -->
+      <section
+        id="hero-desktop"
+        class="hidden lg:flex items-center justify-center min-h-screen bg-white py-16"
+      >
+        <div
+          class="container mx-auto max-w-7xl px-8 flex flex-col lg:flex-row items-center justify-between gap-16"
+        >
+          <!-- Content on the left -->
+          <div class="lg:w-1/2 text-gray-900 text-left">
+            <h1 class="text-5xl font-extrabold mb-6 leading-tight">
+              BOUGER, APPRENDRE,<br />SE DÉPASSER
+            </h1>
+            <p class="text-xl mb-10 max-w-lg text-gray-700">
+              Une activité complète pour le corps et l'esprit dans une super
+              ambiance.
+            </p>
+            <!-- Button -->
+            <a
+              href="#contact"
+              class="inline-block text-center bg-red-500 text-white py-4 px-10 rounded-xl font-bold text-lg hover:bg-red-600 transition duration-300 transform hover:scale-105"
+            >
+              Nous rejoindre dès maintenant
+            </a>
+          </div>
+
+          <!-- Image on the right -->
+          <div class="lg:w-1/2 flex justify-center lg:justify-end">
+            <div
+              class="relative w-full max-w-lg h-[500px] overflow-hidden rounded-3xl"
+            >
+              <img
+                src="assets/img/frame23.png"
+                alt="Femme pratiquant le taekwondo"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Un club, une passion, une famille -->
+      <section id="club" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-7xl">
+          <h2 class="text-4xl font-bold text-center mb-6 text-gray-900">
+            UN CLUB, UNE PASSION, UNE FAMILLE
+          </h2>
+          <p class="text-center text-lg mb-12 max-w-2xl mx-auto text-gray-700">
+            Fondé en 1996, notre club enseigne le Taekwondo avec rigueur et
+            bienveillance. Nous accueillons enfants, ados et adultes, dans un
+            esprit de respect et de dépassement de soi.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Discipline & respect -->
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="assets/img/frame25.png"
+                alt="Discipline et respect"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2 text-gray-900">
+                  Discipline & respect
+                </h3>
+                <div class="flex items-center justify-end">
+                  <span class="text-red-500 text-2xl">👤</span>
+                </div>
+              </div>
+            </article>
+            <!-- Techniques & esprit martial -->
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="assets/img/frame26.png"
+                alt="Techniques et esprit martial"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2 text-gray-900">
+                  Techniques & esprit martial
+                </h3>
+                <div class="flex items-center justify-end">
+                  <span class="text-red-500 text-2xl">🥋</span>
+                </div>
+              </div>
+            </article>
+            <!-- Compétitions & progression -->
+            <article
+              class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="assets/img/frame27.png"
+                alt="Compétitions et progression"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2 text-gray-900">
+                  Compétitions & progression
+                </h3>
+                <div class="flex items-center justify-end">
+                  <span class="text-red-500 text-2xl">🏆</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="text-center mt-10">
+            <a
+              href="#contact"
+              class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105"
+            >
+              Découvrir notre club
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Cours & Horaires -->
+      <section id="horaires" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+          <div class="flex flex-col lg:flex-row gap-12">
+            <div class="w-full lg:w-1/2">
+              <h2 class="text-4xl font-bold mb-6 text-gray-900">
+                COURS & HORAIRES
+              </h2>
+              <p class="mb-6 text-gray-700 text-lg">
+                Des créneaux adaptés à tous les âges et à tous les niveaux, pour
+                progresser à votre rythme.
+              </p>
+              <div class="bg-gray-100 rounded-lg p-6 shadow-inner">
+                <table class="w-full">
+                  <thead>
+                    <tr class="border-b border-gray-300">
+                      <th class="text-left py-3 font-bold text-gray-900">
+                        Jour
+                      </th>
+                      <th class="text-left py-3 font-bold text-gray-900">
+                        Public
+                      </th>
+                      <th class="text-left py-3 font-bold text-gray-900">
+                        Horaire
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-200">
+                      <td class="py-3 text-gray-700">Mardi</td>
+                      <td class="py-3 text-gray-700">Adultes / Ados</td>
+                      <td class="py-3 text-gray-700">20h - 22h</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                      <td class="py-3 text-gray-700">Vendredi</td>
+                      <td class="py-3 text-gray-700">Tous niveaux</td>
+                      <td class="py-3 text-gray-700">19h - 22h</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 text-gray-700">Samedi</td>
+                      <td class="py-3 text-gray-700">Enfants</td>
+                      <td class="py-3 text-gray-700">10h - 12h</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-6 flex items-center bg-blue-50 p-4 rounded-lg">
+                <span class="text-blue-500 mr-3 text-xl">📍</span>
+                <p class="text-gray-700">
+                  Gymnase Ferdinand Bac, Rue Othenin — Compiègne
+                </p>
+              </div>
+              <div class="mt-8">
+                <a
+                  href="#contact"
+                  class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg inline-block transition duration-300 transform hover:scale-105"
+                >
+                  Réservez votre cours d'essai
+                </a>
+              </div>
+            </div>
+            <div class="w-full lg:w-1/2">
+              <div
+                class="bg-gray-100 rounded-lg overflow-hidden h-96 lg:h-[500px] shadow-lg"
+              >
+                <!-- Intégration de la carte Google Maps -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.3977180134852!2d2.826268476733803!3d49.420294471413825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e7d6878f82781d%3A0x9b94bb2c8dcf7fc0!2sFerdinand%20Bac%20Gym!5e0!3m2!1sen!2sfr!4v1755506552293!5m2!1sen!2sfr"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Localisation du Gymnase Ferdinand Bac"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Notre Équipe -->
+      <section id="equipe" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-7xl">
+          <!-- Titre et description -->
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">ÉQUIPE</h2>
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+              Découvrez les entraîneurs et bénévoles qui partagent leur passion
+              et vous accompagnent à chaque étape de votre parcours.
+            </p>
+          </div>
+
+          <!-- Grille des membres de l'équipe -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+          >
+            <!-- Membre 1 -->
+            <article
+              class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gray-300 shadow-md"
+              >
+                <img
+                  src="assets/img/t1.png"
+                  alt="Photo de profil de l'entraîneur"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
+                Christophe Mesgny
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Pratique le taekwondo depuis 2014, adhérent du club et membre du
+                bureau depuis 2021, actuellement professeur, ceinture noire 1er
+                dan homologué FFTDA, Chung do kwan et Kukkiwon (maison mère du
+                Taekwondo).
+              </p>
+            </article>
+
+            <!-- Membre 2 -->
+            <article
+              class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gray-300 shadow-md"
+              >
+                <img
+                  src="assets/img/t2.png"
+                  alt="Photo de profil de l'entraîneur"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Mathieu Ram</h3>
+              <p class="text-gray-700 leading-relaxed">
+                A découvert le taekwondo en 2012, instructeur depuis 2016 et
+                président depuis 2021
+              </p>
+            </article>
+
+            <!-- Membre 3 -->
+            <article
+              class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gray-300 shadow-md"
+              >
+                <img
+                  src="assets/img/t3.png"
+                  alt="Photo de profil de l'entraîneur"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
+                Olivier Grosso
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                Le Taekwondo Compiègne, c’est comme une deuxième famille : on
+                s’encourage, on rigole et on progresse ensemble.
+              </p>
+            </article>
+
+            <!-- Membre 4 -->
+            <article
+              class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gray-300 shadow-md"
+              >
+                <img
+                  src="assets/img/t4.png"
+                  alt="Photo de profil de l'entraîneur"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Jazz Alexane</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Au club depuis 2015, d’abord secrétaire puis Community Manager.
+                Heureuse de continuer l’aventure.
+              </p>
+            </article>
+
+            <!-- Membre 5 -->
+            <article
+              class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gray-300 shadow-md"
+              >
+                <img
+                  src="assets/img/t5.png"
+                  alt="Photo de profil de l'entraîneur"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">
+                Fabien Pierre
+              </h3>
+              <p class="text-gray-700 leading-relaxed">
+                J'ai débuté le Taekwondo il y a 5 ans pour accompagner mon fils.
+                Nous avons découvert, en plus d’un sport, une culture, des
+                valeurs, et un club avec une ambiance familiale et
+                bienveillante.
+              </p>
+            </article>
+
+            <!-- Membre 6 -->
+            <article
+              class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition duration-300"
+            >
+              <div
+                class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-gray-300 shadow-md"
+              >
+                <img
+                  src="assets/img/t6.png"
+                  alt="Photo de profil de l'entraîneur"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Sébastien</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Le Taekwondo Compiègne, c’est comme une deuxième famille : on
+                s’encourage, on rigole et on progresse ensemble.
+              </p>
+            </article>
+          </div>
+
+          <!-- Bouton call-to-action -->
+          <div class="text-center">
+            <a
+              href="#contact"
+              class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg inline-block transition duration-300 transform hover:scale-105"
+            >
+              Envie de nous rencontrer ?
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Téléchargement -->
+      <section
+        id="telechargement"
+        class="py-16 bg-gradient-to-r from-red-500 to-purple-600"
+      >
+        <div class="container mx-auto px-4 max-w-7xl">
+          <div class="max-w-4xl">
+            <!-- Titre -->
+            <h2 class="text-4xl font-bold text-white mb-6">TÉLÉCHARGEMENT</h2>
+
+            <!-- Description -->
+            <p class="text-white text-lg mb-10 leading-relaxed">
+              Retrouvez ici les documents essentiels pour débuter ou progresser
+              en taekwondo : règlements, fiches d'inscription et conseils
+              pratiques.
+            </p>
+
+            <!-- Bouton de téléchargement -->
+            <a
+              href="#"
+              class="inline-block bg-white text-gray-900 font-bold py-4 px-8 rounded-xl text-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Télécharger les documents
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Contact -->
+      <section class="py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4 max-w-7xl">
+          <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Image - Première sur mobile, à droite sur desktop -->
+            <div class="w-full lg:w-1/2 order-1 lg:order-2">
+              <div class="rounded-3xl overflow-hidden">
+                <!-- Image du pratiquant de taekwondo -->
+                <img
+                  src="assets/img/contact.png"
+                  alt="Pratiquant de taekwondo souriant en dobok blanc avec ceinture noire, geste d'accueil"
+                  class="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+
+            <!-- Formulaire - Deuxième sur mobile, à gauche sur desktop -->
+            <div class="w-full lg:w-1/2 order-2 lg:order-1">
+              <div class="max-w-lg">
+                <!-- Titre et sous-titre -->
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">CONTACT</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                  Une question ? Une inscription ? On est là !
+                </p>
+
+                <!-- Formulaire -->
+                <form class="space-y-6" id="contact-form" novalidate>
+                  <!-- Motif de contact -->
+                  <div>
+                    <label
+                      for="motif"
+                      class="block text-sm font-medium text-gray-900 mb-2"
+                    >
+                      Motif
+                    </label>
+                    <select
+                      id="motif"
+                      name="motif"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 ring-cyan-500 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white text-gray-700"
+                    >
+                      <option value="">Mon motif de contact</option>
+                      <option value="inscription">
+                        Inscription / Cours d'essai
+                      </option>
+                      <option value="information">Demande d'information</option>
+                      <option value="competition">Compétitions</option>
+                      <option value="stage">Stages et événements</option>
+                      <option value="autre">Autre</option>
+                    </select>
+                  </div>
+
+                  <!-- Nom et Prénom -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        for="nom"
+                        class="block text-sm font-medium text-gray-900 mb-2"
+                      >
+                        Nom
+                      </label>
+                      <input
+                        type="text"
+                        id="nom"
+                        name="nom"
+                        required
+                        placeholder="Mon nom"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="prenom"
+                        class="block text-sm font-medium text-gray-900 mb-2"
+                      >
+                        Prénom
+                      </label>
+                      <input
+                        type="text"
+                        id="prenom"
+                        name="prenom"
+                        required
+                        placeholder="Mon prénom"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Email et Téléphone -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        for="email"
+                        class="block text-sm font-medium text-gray-900 mb-2"
+                      >
+                        Mail
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="Mon mail"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="telephone"
+                        class="block text-sm font-medium text-gray-900 mb-2"
+                      >
+                        Téléphone
+                      </label>
+                      <input
+                        type="tel"
+                        id="telephone"
+                        name="telephone"
+                        placeholder="Mon téléphone"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Message -->
+                  <div>
+                    <label
+                      for="message"
+                      class="block text-sm font-medium text-gray-900 mb-2"
+                    >
+                      Mon message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                      placeholder="Je voudrais faire...."
+                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
+                    ></textarea>
+                  </div>
+
+                  <!-- Bouton d'envoi -->
+                  <button
+                    type="submit"
+                    id="submit-btn"
+                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-xl transition duration-300 transform hover:scale-105 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Envoyer
+                  </button>
+
+                  <!-- Message de statut -->
+                  <div
+                    id="form-message"
+                    class="hidden p-4 rounded-xl text-center font-medium"
+                  ></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12 border-t border-gray-200">
+      <div class="container mx-auto px-4 max-w-7xl">
+        <!-- Contenu principal du footer -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Logo et nom du club -->
+          <div class="flex flex-col md:flex-row md:items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+              <img
+                src="assets/img/logo.png"
+                alt="Logo Taekwondo Compiègne"
+                class="h-10 mr-3"
+              />
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">TAEKWONDO</h3>
+                <p class="text-sm text-gray-600 uppercase tracking-wide">
+                  COMPIÈGNE
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partenaires -->
+          <div>
+            <h4 class="text-lg font-bold text-gray-900 mb-4">Partenaires</h4>
+            <div class="space-y-3">
+              <!-- Cénacle -->
+              <div class="flex items-center">
+                <img
+                  src="assets/img/cenacle.png"
+                  alt="Logo Cénacle"
+                  class="w-8 h-8 mr-3"
+                />
+                <a
+                  href="#"
+                  class="text-gray-700 hover:text-red-500 transition duration-300"
+                >
+                  Cénacle
+                </a>
+              </div>
+
+              <!-- FFTDA -->
+              <div class="flex items-center">
+                <img
+                  src="assets/img/fftda.png"
+                  alt="Logo FFTDA"
+                  class="w-8 h-8 mr-3"
+                />
+                <a
+                  href="#"
+                  class="text-gray-700 hover:text-red-500 transition duration-300"
+                >
+                  FFTDA
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Légal -->
+          <div>
+            <h4 class="text-lg font-bold text-gray-900 mb-4">Légal</h4>
+            <div class="space-y-2">
+              <a
+                href="#"
+                class="block text-gray-700 hover:text-red-500 transition duration-300"
+              >
+                Conditions d'utilisation
+              </a>
+              <a
+                href="#"
+                class="block text-gray-700 hover:text-red-500 transition duration-300"
+              >
+                Politique de confidentialité
+              </a>
+              <a
+                href="#"
+                class="block text-gray-700 hover:text-red-500 transition duration-300"
+              >
+                Cookies
+              </a>
+              <a
+                href="#"
+                class="block text-gray-700 hover:text-red-500 transition duration-300"
+              >
+                Licences
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ligne de séparation -->
+        <hr class="border-gray-300 mb-6" />
+
+        <!-- Copyright -->
+        <div class="text-center">
+          <p class="text-gray-600 text-sm">©Taekwondo Compiègne - 2025</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Configuration EmailJS - REMPLACEZ PAR VOS PROPRES CLÉS
+        emailjs.init("96CMW61V_x3WkcDTO"); // Remplacez par votre clé publique
+
+        // Gestion du menu mobile
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenu = document.getElementById("close-menu");
+
+        if (menuToggle && mobileMenu && closeMenu) {
+          menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.remove("hidden");
+          });
+
+          closeMenu.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+          });
+
+          // Fermer le menu mobile lors du clic sur un lien
+          const mobileLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+          mobileLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+            });
+          });
+        }
+
+        // Défilement fluide pour tous les liens d'ancrage
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(function (anchor) {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+              // Fermer le menu mobile si ouvert
+              if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+                mobileMenu.classList.add("hidden");
+              }
+
+              // Défilement fluide vers la section
+              targetSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+
+        // Fonction pour afficher les messages de statut
+        function showMessage(message, type) {
+          const messageDiv = document.getElementById("form-message");
+          messageDiv.textContent = message;
+          messageDiv.className = `p-4 rounded-xl text-center font-medium ${
+            type === "success"
+              ? "bg-green-100 text-green-800 border border-green-300"
+              : "bg-red-100 text-red-800 border border-red-300"
+          }`;
+          messageDiv.classList.remove("hidden");
+
+          // Masquer le message après 5 secondes
+          setTimeout(() => {
+            messageDiv.classList.add("hidden");
+          }, 5000);
+        }
+
+        // Gestion du formulaire de contact avec EmailJS
+        const contactForm = document.getElementById("contact-form");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Validation des champs obligatoires
+            const requiredFields = contactForm.querySelectorAll("[required]");
+            let isValid = true;
+
+            requiredFields.forEach(function (field) {
+              if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add("border-red-500");
+                field.classList.remove("border-gray-300");
+              } else {
+                field.classList.remove("border-red-500");
+                field.classList.add("border-gray-300");
+              }
+            });
+
+            // Validation email
+            const emailField = document.getElementById("email");
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailField.value && !emailPattern.test(emailField.value)) {
+              isValid = false;
+              emailField.classList.add("border-red-500");
+              showMessage("Veuillez saisir une adresse email valide.", "error");
+            }
+
+            if (!isValid) {
+              showMessage(
+                "Veuillez remplir tous les champs obligatoires correctement.",
+                "error"
+              );
+              return;
+            }
+
+            // Animation du bouton
+            const submitBtn = document.getElementById("submit-btn");
+            const originalText = submitBtn.textContent;
+
+            submitBtn.textContent = "Envoi en cours...";
+            submitBtn.disabled = true;
+
+            // Préparer les données pour EmailJS
+            const templateParams = {
+              to_email: "ph.robinet@gmail.com", // REMPLACEZ par votre email de réception
+              from_name: `${contactForm.prenom.value} ${contactForm.nom.value}`,
+              from_email: contactForm.email.value,
+              phone: contactForm.telephone.value || "Non renseigné",
+              subject: contactForm.motif.value || "Demande de contact",
+              message: contactForm.message.value,
+              reply_to: contactForm.email.value,
+            };
+
+            // Envoi via EmailJS
+            emailjs
+              .send(
+                "service_nk2i788", // Remplacez par votre Service ID
+                "template_cc5r09u", // Remplacez par votre Template ID
+                templateParams
+              )
+              .then(function (response) {
+                console.log("Email envoyé avec succès!", response);
+
+                // Succès
+                submitBtn.textContent = "Message envoyé !";
+                submitBtn.classList.remove("bg-red-500", "hover:bg-red-600");
+                submitBtn.classList.add("bg-green-500");
+
+                showMessage(
+                  "Votre message a été envoyé avec succès ! Nous vous répondrons rapidement.",
+                  "success"
+                );
+
+                // Réinitialiser le formulaire
+                contactForm.reset();
+
+                // Remettre le bouton normal après 3 secondes
+                setTimeout(function () {
+                  submitBtn.textContent = originalText;
+                  submitBtn.disabled = false;
+                  submitBtn.classList.remove("bg-green-500");
+                  submitBtn.classList.add("bg-red-500", "hover:bg-red-600");
+                }, 3000);
+              })
+              .catch(function (error) {
+                console.error("Erreur lors de l'envoi:", error);
+
+                // Erreur
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+
+                showMessage(
+                  "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter directement.",
+                  "error"
+                );
+              });
+          });
+        }
+
+        // Surligner le lien actif lors du défilement
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+        function updateActiveLink() {
+          let current = "";
+          sections.forEach(function (section) {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 200) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach(function (link) {
+            link.classList.remove("text-red-500");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("text-red-500");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", updateActiveLink);
+
+        // Animation d'apparition au scroll (intersection observer)
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in");
+            }
+          });
+        }, observerOptions);
+
+        // Observer les sections principales
+        const sectionsToObserve = document.querySelectorAll("section");
+        sectionsToObserve.forEach(function (section) {
+          observer.observe(section);
+        });
+      });
+    </script>
+
+    <style>
+      /* Animation d'apparition */
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out forwards;
+      }
+
+      /* Amélioration des focus states pour l'accessibilité */
+      *:focus {
+        outline: 2px solid #ef4444;
+        outline-offset: 2px;
+      }
+
+      /* Style pour les champs invalides */
+      input:invalid,
+      select:invalid,
+      textarea:invalid {
+        border-color: #ef4444;
+      }
+
+      /* Hover states améliorés */
+      .hover\:scale-105:hover {
+        transform: scale(1.05);
+      }
+
+      /* Transitions fluides */
+      * {
+        transition-property: color, background-color, border-color,
+          text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+          filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+    </style>
+  </body>
+</html>
+<!-- . template_cc5r09u -->
