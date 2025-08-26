@@ -42,7 +42,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="shadow-md bg-white sticky top-0 z-40">
+    <header class="shadow-md bg-white top-0 z-40">
       <div
         class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl"
       >
@@ -103,7 +103,7 @@
       <!-- Mobile Menu (hidden by default) -->
       <div
         id="mobile-menu"
-        class="hidden md:hidden fixed inset-0 bg-red-600 z-50 p-6"
+        class="md:hidden fixed inset-0 bg-red-600 z-50 p-6 transition-all duration-300 ease-in-out opacity-0 invisible translate-y-4"
       >
         <div class="flex justify-end mb-8">
           <button
@@ -859,18 +859,37 @@
 
         if (menuToggle && mobileMenu && closeMenu) {
           menuToggle.addEventListener("click", function () {
-            mobileMenu.classList.remove("hidden");
+            mobileMenu.classList.remove(
+              "opacity-0",
+              "invisible",
+              "translate-y-4"
+            );
+            mobileMenu.classList.add("opacity-100", "visible", "translate-y-0");
           });
 
           closeMenu.addEventListener("click", function () {
-            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove(
+              "opacity-100",
+              "visible",
+              "translate-y-0"
+            );
+            mobileMenu.classList.add("opacity-0", "invisible", "translate-y-4");
           });
 
           // Fermer le menu mobile lors du clic sur un lien
           const mobileLinks = mobileMenu.querySelectorAll('a[href^="#"]');
           mobileLinks.forEach(function (link) {
             link.addEventListener("click", function () {
-              mobileMenu.classList.add("hidden");
+              mobileMenu.classList.remove(
+                "opacity-100",
+                "visible",
+                "translate-y-0"
+              );
+              mobileMenu.classList.add(
+                "opacity-0",
+                "invisible",
+                "translate-y-4"
+              );
             });
           });
         }
@@ -886,7 +905,16 @@
             if (targetSection) {
               // Fermer le menu mobile si ouvert
               if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.remove(
+                  "opacity-100",
+                  "visible",
+                  "translate-y-0"
+                );
+                mobileMenu.classList.add(
+                  "opacity-0",
+                  "invisible",
+                  "translate-y-4"
+                );
               }
 
               // Défilement fluide vers la section
@@ -929,11 +957,11 @@
             requiredFields.forEach(function (field) {
               if (!field.value.trim()) {
                 isValid = false;
-                field.classList.add("border-red-500");
-                field.classList.remove("border-gray-300");
+                // field.classList.add("border-red-500");
+                // field.classList.remove("border-gray-300");
               } else {
-                field.classList.remove("border-red-500");
-                field.classList.add("border-gray-300");
+                // field.classList.remove("border-red-500");
+                // field.classList.add("border-gray-300");
               }
             });
 
@@ -1088,10 +1116,18 @@
       }
 
       /* Style pour les champs invalides */
-      input:invalid,
-      select:invalid,
-      textarea:invalid {
-        border-color: #ef4444;
+
+      /* Style pour les champs invalides, mais seulement après interaction */
+      input:invalid:not(:placeholder-shown),
+      select:invalid:not(:placeholder-shown),
+      textarea:invalid:not(:placeholder-shown) {
+        border-color: #ef4444; /* Rouge */
+      }
+      /* Réinitialiser la bordure par défaut pour les champs non encore touchés */
+      input:not(:focus):not(:placeholder-shown):invalid,
+      select:not(:focus):not(:placeholder-shown):invalid,
+      textarea:not(:focus):not(:placeholder-shown):invalid {
+        border-color: inherit;
       }
 
       /* Hover states améliorés */
